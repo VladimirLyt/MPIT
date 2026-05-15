@@ -1,0 +1,225 @@
+/* REGION PAGE */
+
+.region-hero {
+  width: 100%;
+  height: 600px;
+
+  background: #275cf6;
+  overflow: hidden;
+}
+
+.region-hero__inner {
+  position: relative;
+  height: 100%;
+
+  display: grid;
+  grid-template-columns: 1fr 520px;
+  gap: 80px;
+  align-items: center;
+}
+
+.region-hero__content {
+  height: 100%;
+  padding: 34px 0 44px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.region-hero__label {
+  color: #ffffff;
+  line-height: 1.35;
+}
+
+.region-hero__title {
+  margin-top: 14px;
+
+  color: #ffffff;
+  line-height: 1.08;
+}
+
+.region-hero__date {
+  margin-top: 14px;
+
+  color: #ffffff;
+}
+
+.region-hero__button {
+  width: 300px;
+  height: 64px;
+  margin-top: auto;
+
+  border-radius: 999px;
+  background: #ffffff;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #17202d;
+  text-decoration: none;
+}
+
+/* Картинка с маской */
+
+.region-hero__image-wrap {
+  position: relative;
+
+  width: 100%;
+  height: 600px;
+
+  overflow: hidden;
+
+  mask-image: var(--region-image-mask);
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: 100% 100%;
+
+  -webkit-mask-image: var(--region-image-mask);
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  -webkit-mask-size: 100% 100%;
+}
+
+.region-hero__image {
+  width: 100%;
+  height: 100%;
+  max-width: none;
+
+  object-fit: cover;
+}
+
+/* TRACKS */
+
+.region-tracks {
+  width: 100%;
+  padding: 80px 0;
+  background: #eeeeee;
+}
+
+.region-tracks__title {
+  margin-bottom: 64px;
+
+  color: #17202d;
+  text-align: center;
+}
+
+.region-tracks__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.region-track-card {
+  position: relative;
+
+  min-height: 300px;
+  padding: 24px;
+
+  border-radius: 18px;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.region-track-card--school {
+  background: #6c4dff;
+}
+
+.region-track-card--student {
+  background: #275cf6;
+}
+
+.region-track-card__title {
+  position: relative;
+  z-index: 3;
+
+  color: #ffffff;
+}
+
+.region-track-card__tags {
+  position: relative;
+  z-index: 3;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.region-track-card__tag {
+  min-height: 38px;
+  padding: 0 18px;
+
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.18);
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #ffffff;
+}
+
+.region-track-card__date {
+  position: absolute;
+  right: 24px;
+  bottom: 24px;
+  z-index: 3;
+
+  color: #ffffff;
+}
+
+.region-track-card__shape {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+
+  width: 60%;
+  height: auto;
+  max-width: none;
+
+  object-fit: contain;
+  opacity: 0.22;
+  pointer-events: none;
+}
+
+/* DESCRIPTION */
+
+.region-description {
+  width: 100%;
+  padding: 80px 0;
+  background: #ffffff;
+}
+
+.region-description__inner {
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.region-description__title {
+  color: #17202d;
+}
+
+.region-description__content {
+  max-width: 760px;
+
+  color: #111111;
+  line-height: 1.45;
+}
+
+.region-description__content p {
+  margin: 0 0 24px;
+}
+
+.region-description__content a {
+  color: #275cf6;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}

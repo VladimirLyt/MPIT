@@ -1,0 +1,536 @@
+/* SCHOOLCHILDREN PAGE */
+
+/* SCHOOL HERO */
+
+.school-hero {
+  width: 100%;
+  height: 600px;
+  background: #6C4DFF;
+  overflow: hidden;
+}
+
+.school-hero__inner {
+  position: relative;
+  height: 100%;
+}
+
+.school-hero__content {
+  position: relative;
+  z-index: 5;
+
+  width: 320px;
+  height: 100%;
+  padding: 360px 0 44px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.school-hero__title {
+  color: #ffffff;
+  line-height: 1.3;
+}
+
+.school-hero__button {
+  width: 280px;
+  height: 64px;
+
+  border-radius: 999px;
+  background: #ffffff;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #17202d;
+  text-decoration: none;
+}
+
+/* Фоновые SVG-фигуры */
+
+.school-hero__bg-shapes {
+  position: absolute;
+  top: 39px;
+  left: 0;
+  right: 0;
+  z-index: 1;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 11px;
+
+  pointer-events: none;
+}
+
+.school-hero__bg-shapes img {
+  width: 100%;
+  height: 172px;
+  max-width: none;
+
+  object-fit: fill;
+
+}
+
+/* Центральная картинка */
+
+.school-hero__visual {
+  --school-image-height: 390px;
+  --school-image-y: 18px;
+
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  z-index: 4;
+
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.school-hero__image {
+  width: auto;
+  height: 580px;
+  max-width: none;
+
+  object-fit: contain;
+
+  transform: translateY(var(--school-image-y));
+}
+
+/* Плашки справа */
+
+.school-hero__tags {
+  position: absolute;
+  right: 0;
+  bottom: 44px;
+  z-index: 5;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 16px;
+}
+
+.school-hero__tag {
+  height: 48px;
+  padding: 0 20px;
+
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.18);
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #ffffff;
+}
+
+/* TEAM */
+
+.team {
+  width: 100%;
+  padding: 120px 0;
+  background: #eeeeee;
+}
+
+.team__inner {
+  position: relative;
+}
+
+.team__title {
+  margin-bottom: 56px;
+
+  color: #17202d;
+  text-align: center;
+}
+
+.team__cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+/* Карточки ролей */
+
+.team-card {
+  position: relative;
+  min-height: 520px;
+  padding: 24px;
+
+  border-radius: 18px;
+  background: #ffffff;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.team-card__title {
+  position: relative;
+  z-index: 3;
+
+  color: #111111;
+  line-height: 1;
+}
+
+.team-card__shape {
+  --team-shape-padding: 12px;
+
+  position: absolute;
+  top: var(--team-shape-padding);
+  left: var(--team-shape-padding);
+  right: var(--team-shape-padding);
+  z-index: 1;
+
+  width: calc(100% - var(--team-shape-padding) * 2);
+  height: auto;
+  max-width: none;
+
+  object-fit: contain;
+  pointer-events: none;
+}
+
+.team-card__text {
+  position: relative;
+  z-index: 3;
+
+  color: rgba(17, 17, 17, 0.62);
+  line-height: 1.35;
+}
+
+/* Standards */
+
+.team-standards {
+  position: relative;
+
+  min-height: 280px;
+  margin-top: 16px;
+  padding: 24px;
+
+  border-radius: 18px;
+  background: #ffffff;
+  overflow: hidden;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+.team-standards__content {
+  position: relative;
+  z-index: 4;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.team-standards__title {
+  color: #111111;
+}
+
+.team-standards__buttons {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.team-standards__button {
+  height: 64px;
+  min-width: 160px;
+  padding: 0 36px;
+
+  border-radius: 999px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.team-standards__button--purple {
+  background: #6c4dff;
+}
+
+/* Декор справа */
+
+.team-standards__decor {
+  position: relative;
+  z-index: 2;
+}
+
+.team-standards__mascot {
+  position: absolute;
+
+  width: auto;
+  max-width: none;
+
+  object-fit: contain;
+  pointer-events: none;
+}
+
+.team-standards__mascot--purple {
+  height: 240px;
+  left: 8%;
+  bottom: 0;
+
+  transform: rotate(4deg);
+}
+
+.team-standards__mascot--blue {
+  height: 240px;
+  right: 0%;
+  bottom: 0;
+
+  transform: rotate(-8deg);
+}
+
+/* PARTICIPATION */
+
+.participation {
+  width: 100%;
+  padding: 120px 0;
+  background: #ffffff;
+}
+
+.participation__inner {
+  display: grid;
+  grid-template-columns: 430px 1fr;
+  gap: 96px;
+  align-items: stretch;
+}
+
+.participation__left {
+  position: relative;
+
+  min-height: 760px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.participation__title {
+  color: #17202d;
+  line-height: 1.08;
+}
+
+.participation__mascot {
+  width: 330px;
+  height: auto;
+  max-width: none;
+
+  margin-top: 120px;
+  margin-left: 24px;
+
+  object-fit: contain;
+}
+
+.participation__support {
+  margin-top: auto;
+}
+
+.participation__support-text {
+  margin-bottom: 18px;
+  color: rgba(17, 17, 17, 0.62);
+}
+
+.participation__buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.participation__button {
+  width: 340px;
+  height: 64px;
+  padding: 0 28px;
+
+  border-radius: 999px;
+  background: #6c4dff;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #ffffff;
+  text-decoration: none;
+}
+
+/* Steps */
+
+.participation__steps {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.participation-step {
+  position: relative;
+
+  min-height: 256px;
+  padding: 24px;
+
+  border-radius: 20px;
+  background: #f7f7f7;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.participation-step__label {
+  position: relative;
+  z-index: 2;
+
+  color: rgba(17, 17, 17, 0.62);
+}
+
+.participation-step__title {
+  position: relative;
+  z-index: 2;
+
+  max-width: 400px;
+
+  color: #111111;
+  line-height: 1.05;
+}
+
+.participation-step__number {
+  position: absolute;
+  right: 36px;
+  bottom: -36px;
+  z-index: 1;
+
+  font-family: "Martian Grotesk", Arial, sans-serif;
+  font-size: 280px;
+  line-height: 0.8;
+  font-weight: 400;
+  letter-spacing: -0.04em;
+
+  color: rgb(228, 228, 228);
+  pointer-events: none;
+}
+
+/* BENEFITS */
+
+.benefits {
+  width: 100%;
+  padding: 120px 0;
+  background: #eeeeee;
+}
+
+.benefits__inner {
+  position: relative;
+}
+
+.benefits__title {
+  margin-bottom: 64px;
+
+  color: #17202d;
+  text-align: center;
+}
+
+.benefits__wrapper {
+  position: relative;
+}
+
+/* Верхний блок на 60px уже по бокам */
+
+.benefits-card--winners {
+  width: calc(100% - 120px);
+  margin: 0 auto -24px;
+  min-height: 150px;
+  padding: 24px 0px 48px 24px;
+
+  border-radius: 18px 18px 0 0;
+  background: #8368ff;
+
+  position: relative;
+  z-index: 2;
+}
+
+/* Нижний блок на всю ширину сетки */
+
+.benefits-card--participants {
+  min-height: 240px;
+  padding: 24px;
+
+  border-radius: 18px;
+  background: #6c4dff;
+
+  position: relative;
+  z-index: 3;
+  overflow: hidden;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+.benefits-card__title {
+  color: #ffffff;
+}
+
+.benefits-card__tags {
+  margin-top: 22px;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.benefits-card__left {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.benefits-card__shape {
+  width: 600px;
+  height: auto;
+  max-width: none;
+
+  margin-top: 36px;
+
+  object-fit: contain;
+}
+
+.benefits-card__list {
+  position: relative;
+  z-index: 3;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 12px;
+
+  align-self: end;
+}
+
+
+
+.benefits-tag {
+  max-width: 100%;
+  min-height: 34px;
+  padding: 12px 26px;
+
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.18);
+
+  display: inline-flex;
+  align-items: start;
+  justify-content: center;
+
+  color: #ffffff;
+  line-height: 1.2;
+  white-space: normal;
+  text-align: start;
+}

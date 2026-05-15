@@ -1,0 +1,1566 @@
+/* ADAPTIVE */
+
+@media (max-width: 1180px) {
+  :root {
+    --page-padding: 32px;
+    --container-width: 100%;
+  }
+
+  .title--xl { font-size: 48px; }
+  .title--lg { font-size: 42px; }
+  .title--md { font-size: 34px; }
+  .title--sm { font-size: 28px; }
+
+  .section--gray,
+  .about,
+  .partners,
+  .participation,
+  .operator-team,
+  .operator-form,
+  .team,
+  .benefits,
+  .track-info,
+  .news-page {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
+  .header__inner {
+    gap: 24px;
+  }
+
+  .header__nav {
+    gap: 18px;
+  }
+
+  .header__link,
+  .header__dropdown-button {
+    font-size: 16px;
+  }
+
+  .hero__inner {
+    --hero-left-width: 380px;
+    --hero-right-width: 132px;
+    --hero-gap: 24px;
+  }
+
+  .hero__shape-img {
+    height: 450px;
+  }
+
+  .hero__image {
+    height: min(var(--hero-image-height), 540px);
+  }
+
+  .about__decor {
+    width: 240px;
+    margin-right: 0;
+  }
+
+  .about-card {
+    min-height: 320px;
+  }
+
+  .tracks__visual {
+    left: 370px;
+    right: 86px;
+  }
+
+  .tracks__shape {
+    height: 460px;
+  }
+
+  .tracks__image {
+    height: min(var(--tracks-image-height), 520px);
+  }
+
+  .roadmap-item {
+    grid-template-columns: minmax(0, 1fr) 300px;
+    gap: 32px;
+  }
+
+  .roadmap-item__date {
+    width: 360px;
+  }
+
+  .roadmap-item__mascot {
+    height: 190px;
+  }
+
+  .regions__grid,
+  .news-page__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .reviews__inner {
+    grid-template-columns: 240px 1fr;
+    gap: 32px;
+  }
+
+  .news-card {
+    flex-basis: calc((100% - 24px) / 2);
+  }
+
+  .footer__top {
+    grid-template-columns: 1fr 1fr;
+    gap: 48px 32px;
+  }
+
+  .footer__column {
+    text-align: left;
+  }
+
+  .footer__links {
+    align-items: flex-start;
+  }
+
+  .operator-hero__content {
+    width: 560px;
+  }
+
+  .operator-hero__shape {
+    height: 320px;
+    left: 68%;
+  }
+
+  .operator-hero__right {
+    width: 250px;
+  }
+
+  .participation__inner {
+    grid-template-columns: 340px 1fr;
+    gap: 48px;
+  }
+
+  .participation__mascot {
+    width: 300px;
+    max-width: 100%;
+    margin-top: 80px;
+    margin-left: 0;
+  }
+
+  .operator-team__card {
+    grid-template-columns: 1fr 0.9fr;
+    gap: 48px;
+  }
+
+  .operator-team__shape {
+    width: 640px;
+  }
+
+  .school-hero__image {
+    height: 520px;
+  }
+
+  .team__cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .benefits-card__shape {
+    width: 420px;
+  }
+}
+
+@media (max-width: 992px) {
+  :root {
+    --page-padding: 24px;
+  }
+
+  .title--xl { font-size: 42px; }
+  .title--lg { font-size: 36px; }
+  .title--md { font-size: 30px; }
+  .title--sm { font-size: 26px; }
+
+  .text--24 { font-size: 20px; }
+  .text--22 { font-size: 19px; }
+  .text--20 { font-size: 18px; }
+  .text--18 { font-size: 16px; }
+
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .header__inner {
+    height: 76px;
+  }
+
+  .header__logo img {
+    width: 112px;
+  }
+
+  .header__burger {
+    position: relative;
+    z-index: 102;
+    display: block;
+  }
+
+  .header__burger span {
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+
+  .header.header--open .header__burger span:first-child {
+    transform: translateY(3px) rotate(45deg);
+  }
+
+  .header.header--open .header__burger span:last-child {
+    transform: translateY(-3px) rotate(-45deg);
+  }
+
+  .header__nav {
+    position: fixed;
+    top: 88px;
+    left: var(--page-padding);
+    right: var(--page-padding);
+    z-index: 101;
+
+    max-height: calc(100vh - 112px);
+    padding: 18px;
+
+    border-radius: 24px;
+    background: #ffffff;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.16);
+    overflow-y: auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 6px;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(-10px);
+    transition: 0.2s ease;
+  }
+
+  .header.header--open .header__nav {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  body.menu-open {
+    overflow: hidden;
+  }
+
+  .header__link,
+  .header__dropdown-button {
+    width: 100%;
+    min-height: 48px;
+    padding: 0 14px;
+    border-radius: 14px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    font-size: 18px;
+    text-align: left;
+  }
+
+  .header__link:hover,
+  .header__dropdown-button:hover {
+    background: #f3f3f3;
+  }
+
+  .header__dropdown {
+    width: 100%;
+  }
+
+  .header__dropdown-menu {
+    position: static;
+    min-width: 0;
+    max-height: 0;
+    margin: 0;
+    padding: 0 8px;
+
+    border-radius: 16px;
+    box-shadow: none;
+    background: #f7f7f7;
+
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    overflow: hidden;
+    transition: max-height 0.2s ease, padding 0.2s ease, margin 0.2s ease;
+  }
+
+  .header__dropdown:hover .header__dropdown-menu {
+    transform: none;
+  }
+
+  .header__dropdown.header__dropdown--open .header__dropdown-menu {
+    max-height: 140px;
+    margin-top: 6px;
+    padding: 8px;
+  }
+
+  .header__dropdown.header__dropdown--open .header__arrow {
+    transform: rotate(-135deg) translateY(-1px);
+  }
+
+  .hero {
+    height: auto;
+  }
+
+  .hero__inner {
+    min-height: 600px;
+    --hero-left-width: 330px;
+    --hero-right-width: 112px;
+    --hero-gap: 16px;
+  }
+
+  .hero__button,
+  .tracks__button,
+  .roadmap-button,
+  .region-hero__button,
+  .operator-hero__button,
+  .school-hero__button,
+  .participation__button,
+  .track-info-card__button,
+  .team-standards__button,
+  .contact-support-card__button,
+  .operator-form__button {
+    height: 56px;
+    font-size: 18px;
+  }
+
+  .hero__shape-img {
+    height: 380px;
+  }
+
+  .hero__image {
+    height: min(var(--hero-image-height), 460px);
+  }
+
+  .hero__arrow,
+  .tracks__arrow,
+  .reviews__arrow,
+  .news__arrow {
+    width: 56px;
+    height: 56px;
+  }
+
+  .about__top,
+  .reviews__inner,
+  .region-description__inner {
+    grid-template-columns: 1fr;
+    display: grid;
+    gap: 24px;
+  }
+
+  .about__decor {
+    width: 180px;
+  }
+
+  .about__cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about-card,
+  .about-card--wide {
+    grid-column: span 1;
+  }
+
+  .about__stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .tracks__inner {
+    height: auto;
+    min-height: 560px;
+    margin-bottom: 80px;
+  }
+
+  .tracks__content {
+    width: 360px;
+    min-height: 500px;
+  }
+
+  .tracks__visual {
+    left: 300px;
+    right: 72px;
+  }
+
+  .tracks__shape {
+    height: 380px;
+  }
+
+  .tracks__image {
+    height: min(var(--tracks-image-height), 430px);
+  }
+
+  .roadmap-item {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 48px 0;
+  }
+
+  .roadmap-item__content {
+    max-width: 100%;
+  }
+
+  .roadmap-item__date {
+    width: min(100%, 420px);
+    justify-self: start;
+  }
+
+  .roadmap-item__mascot {
+    right: 0;
+    left: auto;
+    height: 150px;
+    opacity: 0.45;
+  }
+
+  .regions__grid,
+  .partners__grid,
+  .news-page__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .region-card {
+    min-height: auto;
+    border-radius: 32px;
+  }
+
+  .region-card__image,
+  .region-card:hover .region-card__image,
+  .region-card--one-action:hover .region-card__image,
+  .region-card--two-actions:hover .region-card__image {
+    height: 240px;
+    margin-bottom: 10px;
+  }
+
+  .region-card__actions,
+  .region-card:hover .region-card__actions {
+    max-height: none;
+    margin: 0 16px 16px;
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .reviews__left {
+    min-height: auto;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .partners-card {
+    height: 180px;
+  }
+
+  .news-card {
+    flex-basis: min(420px, 78vw);
+    min-height: 560px;
+  }
+
+  .footer {
+    margin-top: 80px;
+  }
+
+  .footer__inner {
+    min-height: 420px;
+    padding-top: 48px;
+  }
+
+  .footer__logo {
+    gap: 80px;
+  }
+
+  .footer__big-logo {
+    bottom: -72px;
+  }
+
+  .contacts-hero {
+    height: auto;
+    min-height: 560px;
+  }
+
+  .contacts-hero__shapes {
+    grid-template-columns: repeat(2, 1fr);
+    opacity: 0.55;
+  }
+
+  .contacts-hero__info {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    justify-items: start;
+  }
+
+  .contact-support__inner,
+  .region-tracks__grid,
+  .region-effect__cards,
+  .track-info__inner,
+  .team-standards,
+  .benefits-card--participants {
+    grid-template-columns: 1fr;
+  }
+
+  .region-hero {
+    height: auto;
+  }
+
+  .region-hero__inner {
+    min-height: 0;
+    padding: 40px 0;
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .region-hero__content {
+    height: auto;
+    padding: 0;
+  }
+
+  .region-hero__button {
+    margin-top: 32px;
+  }
+
+  .region-hero__image-wrap {
+    height: 420px;
+  }
+
+  .operator-hero {
+    height: auto;
+    min-height: 560px;
+  }
+
+  .operator-hero__content {
+    width: min(100%, 560px);
+    min-height: 560px;
+  }
+
+  .operator-hero__shape {
+    left: auto;
+    right: 140px;
+    height: 280px;
+    opacity: 0.65;
+    transform: none;
+  }
+
+  .operator-hero__right {
+    width: 220px;
+  }
+
+  .participation__inner,
+  .operator-team__card {
+    grid-template-columns: 1fr;
+  }
+
+  .participation__left {
+    min-height: auto;
+  }
+
+  .participation__mascot {
+    width: 220px;
+    margin: 32px 0;
+  }
+
+  .participation__support {
+    margin-top: 0;
+  }
+
+  .operator-team__card {
+    min-height: auto;
+  }
+
+  .operator-team__shape {
+    width: 520px;
+    opacity: 0.28;
+  }
+
+  .operator-team__roles {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .operator-role {
+    max-width: none;
+  }
+
+  .school-hero {
+    height: auto;
+    min-height: 620px;
+  }
+
+  .school-hero__content {
+    width: 280px;
+    padding: 340px 0 36px;
+  }
+
+  .school-hero__image {
+    height: 500px;
+  }
+
+  .school-hero__tags {
+    bottom: 36px;
+  }
+
+  .team__cards {
+    grid-template-columns: 1fr;
+  }
+
+  .team-card {
+    min-height: 360px;
+  }
+
+  .team-standards__decor {
+    min-height: 220px;
+  }
+
+  .benefits-card--winners {
+    width: calc(100% - 48px);
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --page-padding: 16px;
+    --radius-large: 24px;
+  }
+
+  .title--xl { font-size: 34px; }
+  .title--lg { font-size: 30px; }
+  .title--md { font-size: 26px; }
+  .title--sm { font-size: 24px; }
+
+  .text--24 { font-size: 18px; }
+  .text--22 { font-size: 17px; }
+  .text--20 { font-size: 16px; }
+  .text--18 { font-size: 15px; }
+  .text--16 { font-size: 14px; }
+
+  .section--gray,
+  .about,
+  .partners,
+  .participation,
+  .operator-team,
+  .operator-form,
+  .team,
+  .benefits,
+  .track-info,
+  .news-page,
+  .region-tracks,
+  .region-description,
+  .region-effect,
+  .contact-support {
+    padding-top: 56px;
+    padding-bottom: 56px;
+  }
+
+  .header__inner {
+    height: 68px;
+  }
+
+  .header__nav {
+    top: 78px;
+    max-height: calc(100vh - 96px);
+    border-radius: 20px;
+  }
+
+  .hero {
+    min-height: 0;
+  }
+
+  .hero__inner {
+    min-height: 0;
+    padding-top: 28px;
+    padding-bottom: 24px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hero__slide {
+    height: auto;
+  }
+
+  .hero__content {
+    width: 100%;
+    height: auto;
+    min-height: 220px;
+    padding: 0;
+    gap: 28px;
+  }
+
+  .hero__text-block {
+    max-width: 100%;
+  }
+
+  .hero__subtitle {
+    margin-top: 14px;
+  }
+
+  .hero__button,
+  .tracks__button,
+  .roadmap-button,
+  .region-hero__button,
+  .operator-hero__button,
+  .school-hero__button,
+  .participation__button,
+  .track-info-card__button,
+  .team-standards__button,
+  .contact-support-card__button,
+  .operator-form__button {
+    width: 100%;
+    min-width: 0;
+    height: 52px;
+    padding-inline: 18px;
+    font-size: 16px;
+  }
+
+  .hero__visual {
+    position: relative;
+    left: auto;
+    right: auto;
+    top: auto;
+    bottom: auto;
+    height: 300px;
+    margin-top: 24px;
+  }
+
+  .hero__shape-img {
+    height: 270px;
+  }
+
+  .hero__image {
+    height: min(var(--hero-image-height), 330px);
+  }
+
+  .hero__right {
+    position: relative;
+    top: auto;
+    right: auto;
+    height: auto;
+    width: 100%;
+    padding: 24px 0 0;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .hero__arrow,
+  .tracks__arrow,
+  .reviews__arrow,
+  .news__arrow,
+  .news-page__arrow {
+    width: 48px;
+    height: 48px;
+  }
+
+  .hero__arrow img,
+  .tracks__arrow img,
+  .reviews__arrow img,
+  .news__arrow img,
+  .news-page__arrow img {
+    width: 22px;
+    height: 22px;
+  }
+
+  .about__top {
+    margin-bottom: 40px;
+  }
+
+  .about__decor {
+    width: 140px;
+  }
+
+  .about__cards,
+  .about__stats,
+  .regions__grid,
+  .partners__grid,
+  .news-page__grid,
+  .footer__top,
+  .operator-team__roles {
+    grid-template-columns: 1fr;
+  }
+
+  .about-card {
+    min-height: 260px;
+    border-radius: 18px;
+  }
+
+  .about-stat__number {
+    font-size: 38px;
+  }
+
+  .tracks__inner {
+    min-height: 0;
+    padding: 22px;
+    margin-bottom: 56px;
+    border-radius: 24px;
+  }
+
+  .tracks__slide {
+    height: auto;
+  }
+
+  .tracks__content {
+    width: 100%;
+    min-height: 220px;
+    gap: 28px;
+  }
+
+  .tracks__visual {
+    position: relative;
+    left: auto;
+    right: auto;
+    top: auto;
+    bottom: auto;
+    height: 300px;
+    margin-top: 24px;
+  }
+
+  .tracks__shape {
+    height: 260px;
+  }
+
+  .tracks__image {
+    height: min(var(--tracks-image-height), 320px);
+  }
+
+  .tracks__arrows,
+  .tracks__dots {
+    position: absolute;
+    z-index: 6;
+    margin-top: 0;
+  }
+
+  .tracks__arrows {
+    right: 22px;
+    bottom: 22px;
+
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .tracks__dots {
+    left: 22px;
+    bottom: 39px;
+
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .roadmap {
+    padding-bottom: 24px;
+  }
+
+  .roadmap-item {
+    padding: 36px 0;
+  }
+
+  .roadmap-item__date-text {
+    font-size: 24px;
+  }
+
+  .roadmap-item__mascot {
+    display: none;
+  }
+
+  .regions__title {
+    margin-top: 56px;
+    margin-bottom: 36px;
+  }
+
+  .region-card {
+    border-radius: 24px;
+  }
+
+  .region-card__info {
+    padding: 22px 22px 0;
+  }
+
+  .region-card__title {
+    font-size: 26px;
+  }
+
+  .region-card__image,
+  .region-card:hover .region-card__image,
+  .region-card--one-action:hover .region-card__image,
+  .region-card--two-actions:hover .region-card__image {
+    width: calc(100% - 24px);
+    height: 220px;
+    margin: auto 12px 10px;
+    border-radius: 18px;
+  }
+
+  .region-card__actions,
+  .region-card:hover .region-card__actions {
+    margin: 0 12px 12px;
+  }
+
+  .region-card__button {
+    height: 50px;
+    font-size: 16px;
+  }
+
+  .reviews {
+    margin-top: 56px;
+    margin-bottom: 56px;
+  }
+
+  .reviews__left {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+  }
+
+  .reviews__card {
+    min-height: auto;
+    padding: 24px;
+    border-radius: 24px;
+  }
+
+  .reviews__person {
+    align-items: flex-start;
+  }
+
+  .reviews__avatar {
+    width: 64px;
+    height: 64px;
+  }
+
+  .reviews__bottom {
+    margin-top: 28px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .partners__title,
+  .news__top,
+  .news-page__title,
+  .team__title,
+  .benefits__title,
+  .region-tracks__title,
+  .region-effect__title {
+    margin-bottom: 36px;
+  }
+
+  .partners-card {
+    height: 140px;
+  }
+
+  .partners-card img {
+    width: 160px;
+    max-width: 80%;
+  }
+
+  .news {
+    margin-top: 56px;
+  }
+
+  .news__top {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .news-card,
+  .news-page .news-card {
+    flex-basis: min(320px, 84vw);
+    min-height: 500px;
+    padding: 12px;
+    border-radius: 24px;
+  }
+
+  .news-card__image,
+  .news-page .news-card__image {
+    height: 210px;
+  }
+
+  .news-card__title,
+  .news-page .news-card__title {
+    font-size: 22px;
+  }
+
+  .footer__inner {
+    min-height: 320px;
+    padding-top: 40px;
+  }
+
+  .footer__top {
+    gap: 32px;
+  }
+
+  .footer__logo {
+    width: 130px;
+    gap: 40px;
+  }
+
+  .footer__middle {
+    margin-top: 40px;
+  }
+
+  .footer__big-logo {
+    bottom: -32px;
+  }
+
+  .contacts-hero {
+    min-height: 620px;
+  }
+
+  .contacts-hero__inner {
+    padding: 36px 0;
+  }
+
+  .contacts-hero__title {
+    text-align: left;
+  }
+
+  .contacts-hero__shapes {
+    top: 120px;
+    gap: 8px;
+  }
+
+  .contacts-hero__shapes img {
+    height: 180px;
+  }
+
+  .contacts-hero__value {
+    word-break: break-word;
+  }
+
+  .contact-support-card {
+    min-height: 260px;
+  }
+
+  .news-page__pagination {
+    margin-top: 40px;
+    gap: 14px;
+  }
+
+  .news-page__pages {
+    gap: 12px;
+  }
+
+  .region-hero__inner {
+    padding: 32px 0;
+  }
+
+  .region-hero__image-wrap {
+    height: 300px;
+  }
+
+  .region-track-card {
+    min-height: 260px;
+  }
+
+  .region-track-card__date {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    margin-top: 32px;
+  }
+
+  .region-description__content p {
+    margin-bottom: 18px;
+  }
+
+  .operator-hero {
+    min-height: 0;
+  }
+
+  .operator-hero__inner {
+    padding: 32px 0;
+  }
+
+  .operator-hero__content {
+    width: 100%;
+    min-height: 0;
+    padding: 0;
+  }
+
+  .operator-hero__button {
+    margin-top: 32px;
+  }
+
+  .operator-hero__shape {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    left: auto;
+    height: 220px;
+    margin: 32px auto 0;
+    display: block;
+    opacity: 0.8;
+  }
+
+  .operator-hero__right {
+    position: static;
+    width: 100%;
+    margin-top: 28px;
+    align-items: flex-start;
+    gap: 22px;
+  }
+
+  .operator-hero__count {
+    text-align: left;
+  }
+
+  .operator-hero__regions {
+    margin-top: 0;
+    align-items: flex-start;
+  }
+
+  .region-effect-card {
+    min-height: 280px;
+  }
+
+  .participation__inner {
+    gap: 32px;
+  }
+
+  .participation__mascot {
+    display: none;
+  }
+
+  .participation__buttons {
+    width: 100%;
+  }
+
+  .participation-step {
+    min-height: 220px;
+  }
+
+  .participation-step__number {
+    right: 18px;
+    bottom: -18px;
+    font-size: 170px;
+  }
+
+  .operator-team__back-shape {
+    display: none;
+  }
+
+  .operator-team__card {
+    padding: 24px;
+    border-radius: 24px;
+    gap: 32px;
+  }
+
+  .operator-team__shape {
+    display: none;
+  }
+
+  .operator-form__card {
+    padding: 24px;
+    border-radius: 24px;
+  }
+
+  .operator-form__fields {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .operator-form__button {
+    margin-top: 24px;
+  }
+
+  .school-hero {
+    min-height: 0;
+  }
+
+  .school-hero__inner {
+    min-height: 620px;
+    padding: 32px 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .school-hero__content {
+    width: 100%;
+    height: auto;
+    padding: 0;
+    order: 1;
+  }
+
+  .school-hero__bg-shapes {
+    top: 96px;
+    grid-template-columns: repeat(2, 1fr);
+    opacity: 0.55;
+  }
+
+  .school-hero__bg-shapes img {
+    height: 120px;
+  }
+
+  .school-hero__visual {
+    position: relative;
+    left: auto;
+    bottom: auto;
+    order: 2;
+    height: 360px;
+    margin-top: 24px;
+    transform: none;
+    display: flex;
+    justify-content: center;
+  }
+
+  .school-hero__image {
+    height: 390px;
+  }
+
+  .school-hero__tags {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    order: 3;
+    margin-top: 18px;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .school-hero__tag {
+    height: auto;
+    min-height: 40px;
+    padding: 10px 16px;
+  }
+
+  .team-card {
+    min-height: 300px;
+  }
+
+  .team-standards {
+    min-height: 0;
+  }
+
+  .team-standards__buttons {
+    flex-direction: column;
+    align-items: stretch;
+    margin-top: 24px;
+  }
+
+  .team-standards__decor {
+    display: none;
+  }
+
+  .track-info-card {
+    min-height: 280px;
+  }
+
+  .track-info-card__text {
+    margin-top: 48px;
+  }
+
+  .track-info-card__mascot {
+    height: 150px;
+    opacity: 0.45;
+  }
+
+  .benefits-card--winners {
+    width: calc(100% - 24px);
+    min-height: 120px;
+    padding: 20px 20px 42px;
+  }
+
+  .benefits-card--participants {
+    min-height: 0;
+    padding: 20px;
+  }
+
+  .benefits-card__shape {
+    width: 100%;
+    max-width: 360px;
+    margin-top: 24px;
+  }
+
+  .benefits-card__list {
+    align-self: start;
+    margin-top: 24px;
+  }
+
+  .benefits-tag {
+    border-radius: 18px;
+    padding: 10px 16px;
+  }
+
+  
+}
+
+
+
+@media (max-width: 520px) {
+  .container {
+    width: calc(100% - var(--page-padding) * 2);
+  }
+
+  .title--xl { font-size: 30px; }
+  .title--lg { font-size: 27px; }
+  .title--md { font-size: 24px; }
+  .title--sm { font-size: 22px; }
+
+  .header__logo img {
+    width: 100px;
+  }
+
+  .hero__visual,
+  .tracks__visual {
+    height: 250px;
+  }
+
+  .hero__image,
+  .tracks__image {
+    height: 270px;
+  }
+
+  .hero__shape-img,
+  .tracks__shape {
+    height: 230px;
+  }
+
+  .about-card,
+  .region-effect-card,
+  .region-track-card,
+  .contact-support-card,
+  .track-info-card,
+  .team-card {
+    padding: 18px;
+  }
+
+  .about__stats {
+    gap: 18px;
+  }
+
+  .about-stat {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .roadmap-item__buttons,
+  .contact-support-card__buttons {
+    width: 100%;
+  }
+
+  .roadmap-item__date-text {
+    font-size: 20px;
+  }
+
+  .region-card__button {
+    padding-inline: 16px;
+  }
+
+  .news-card,
+  .news-page .news-card {
+    flex-basis: 86vw;
+  }
+
+  .news-card__image,
+  .news-page .news-card__image {
+    height: 180px;
+  }
+
+  .footer__big-logo {
+    bottom: -12px;
+  }
+
+  .contacts-hero__shapes {
+    grid-template-columns: 1fr;
+  }
+
+  .contacts-hero__shapes img:nth-child(n + 3) {
+    display: none;
+  }
+
+  .region-hero__image-wrap {
+    height: 240px;
+  }
+
+  .operator-hero__shape {
+    height: 180px;
+  }
+
+  .operator-form__input,
+  .operator-form__textarea {
+    font-size: 16px;
+  }
+
+  .school-hero__inner {
+    min-height: 560px;
+  }
+
+  .school-hero__visual {
+    height: 300px;
+  }
+
+  .school-hero__image {
+    height: 330px;
+  }
+
+  .school-hero__bg-shapes img {
+    height: 96px;
+  }
+}
+
+@media (max-width: 992px) and (min-width: 769px) {
+  .hero__inner,
+  .hero__slide,
+  .hero__content {
+    height: 600px;
+  }
+}
+
+@media (hover: none) {
+  .region-card__actions,
+  .region-card:hover .region-card__actions {
+    max-height: none;
+  
+    margin: 0 16px 16px;
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .region-card:hover .region-card__image,
+  .region-card--one-action:hover .region-card__image,
+  .region-card--two-actions:hover .region-card__image {
+    height: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .school-hero__content {
+    gap: 28px;
+    justify-content: flex-start;
+  }
+  
+}
+
+@media (max-width: 768px) {
+  .reviews__inner {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .reviews__left {
+    display: contents;
+  }
+
+  .reviews__title {
+    order: 1;
+  }
+
+  .reviews__card {
+    order: 2;
+  }
+
+  .reviews__arrows {
+    order: 3;
+    margin-top: 4px;
+
+    display: flex;
+    gap: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  .tracks {
+    position: relative;
+  }
+
+  .tracks__arrows,
+  .tracks__dots {
+    position: absolute;
+    z-index: 10;
+    margin-top: 0;
+  }
+
+  .tracks__arrows {
+    top: auto;
+    left: auto;
+    right: 22px;
+    bottom: 22px;
+
+    display: flex;
+    gap: 12px;
+  }
+
+  .tracks__dots {
+    top: auto;
+    right: auto;
+    left: 22px;
+    bottom: 39px;
+
+    display: flex;
+    gap: 8px;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .tracks__visual {
+    --tracks-image-y: 45px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .region-card__image,
+  .region-card:hover .region-card__image,
+  .region-card--one-action:hover .region-card__image,
+  .region-card--two-actions:hover .region-card__image {
+    margin-top: 22px;
+  }
+}
+
+@media (max-width: 768px) {
+  .news__inner {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .news__top {
+    display: contents;
+  }
+
+  .news__title {
+    order: 1;
+    margin-bottom: 24px;
+  }
+
+  .news__slider {
+    order: 2;
+    width: 100%;
+  }
+
+  .news__arrows {
+    order: 3;
+    margin-top: 20px;
+
+    display: flex;
+    gap: 14px;
+  }
+}
+
+@media (max-width: 520px) {
+  .hero__visual {
+    margin-top: 18px;
+    margin-bottom: -48px;
+    height: 360px;
+    overflow: visible;
+  }
+
+  .hero__image {
+    top: auto !important;
+    bottom: -100px !important;
+    left: 50%;
+
+    height: 390px;
+    transform: translateX(-50%);
+  }
+
+  .hero__shape-img {
+    top: auto !important;
+    bottom: 72px !important;
+    left: 50%;
+
+    transform: translateX(-50%);
+  }
+
+  .hero__right {
+    position: relative;
+    z-index: 10;
+    padding-bottom: 24px;
+  }
+}

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Моя профессия — ИТ</title>
+
+        <link rel="stylesheet" href="./css/style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="./css/news-page.css">
+
+        <link rel="stylesheet" href="./css/adaptive.css">
+
+        <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+        <script src="./js/region.js" defer></script>
+        <script src="./js/news.js" defer></script>
+        <script src="./js/script.js" defer></script>
+        <script src="./js/region.js" defer></script>
+    </head>
+<body>
+
+    <header class="header">
+        <div class="container header__inner">
+
+            <a class="header__logo" href="./index.html">
+            <img src="./assets/logo/logo.svg" alt="Моя профессия — ИТ">
+            </a>
+
+            <nav class="header__nav">
+            <a class="header__link" href="./index.html">Главная</a>
+
+            <div class="header__dropdown">
+                <button class="header__dropdown-button" type="button">
+                Треки
+                <span class="header__arrow"></span>
+                </button>
+
+                <div class="header__dropdown-menu">
+                <a href="./schoolchildren.html">Трек школьников</a>
+                <a href="./student.html">Трек студентов</a>
+                </div>
+            </div>
+
+            <a class="header__link" href="./region_operator.html">Региональным операторам</a>
+            <a class="header__link" href="./news.html">Новости</a>
+            <a class="header__link" href="./contact.html">Контакты</a>
+            </nav>
+
+            <button class="header__burger" type="button" aria-label="Открыть меню">
+            <span></span>
+            <span></span>
+            </button>
+
+        </div>
+    </header>
+
+  <main>
+    <section class="news-page">
+        <div class="container news-page__inner">
+
+            <h1 class="news-page__title title title--lg">
+            Новости
+            </h1>
+
+            <div class="news-page__grid" id="newsPageGrid"></div>
+
+            <div class="news-page__pagination">
+            <button class="news-page__arrow" type="button" id="newsPagePrev" aria-label="Предыдущая страница">
+                <img src="./assets/icons/arrow-left.svg" alt="">
+            </button>
+
+            <div class="news-page__pages" id="newsPageNumbers"></div>
+
+            <button class="news-page__arrow" type="button" id="newsPageNext" aria-label="Следующая страница">
+                <img src="./assets/icons/arrow-right.svg" alt="">
+            </button>
+            </div>
+
+        </div>
+    </section>
+  
+</main>
+
+
+        <footer class="footer">
+            <div class="container footer__inner">
+
+                <div class="footer__top">
+                <a class="footer__logo" href="./index.html">
+                    <img src="./assets/logo/logo.svg" alt="Моя профессия — ИТ">
+                    <span class="footer__year text text--16">2026</span>
+                </a>
+
+                <div class="footer__column">
+                    <h3 class="footer__title text text--20">Контакты</h3>
+
+                    <div class="footer__links">
+                    <a href="tel:+7914220807">8 914 22-08-07</a>
+                    <a href="mailto:hello@mpit.pro">hello@mpit.pro</a>
+                    <a href="#">Чат поддержки участников (Телеграм)</a>
+                    </div>
+                </div>
+
+                <div class="footer__column">
+                    <h3 class="footer__title text text--20">Страницы</h3>
+
+                    <div class="footer__links">
+                    <a href="./index.html">Главная</a>
+                    <a href="./schoolchildren.html">Школьникам</a>
+                    <a href="./student.html">Специалистам</a>
+                    <a href="./region_operator.html">Региональным операторам</a>
+                    <a href="./contact.html">Контакты</a>
+                    <a href="./news.html">Новости</a>
+                    </div>
+                </div>
+
+                <div class="footer__column">
+                    <h3 class="footer__title text text--20">Документы</h3>
+
+                    <div class="footer__links">
+                    <a href="./assets/document/regulations.pdf">Положение о конкурсе</a>
+                    <a href="./assets/document/agreement.pdf">Пользовательское соглашение</a>
+                    <a href="./assets/document/privacy.pdf">Политика конфиденциальности</a>
+                    </div>
+                </div>
+                </div>
+
+
+                <div class="footer__big-logo">
+                <img src="./img/logo_footer.svg" alt="">
+                </div>
+
+            </div>
+        </footer>
+
+</main>
+</body>
+</html>

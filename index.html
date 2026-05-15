@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Моя профессия — ИТ</title>
+
+        <link rel="stylesheet" href="./css/style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+        <link rel="stylesheet" href="./css/adaptive.css">
+
+        <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+        <script src="./js/region.js" defer></script>
+        <script src="./js/news.js" defer></script>
+        <script src="./js/script.js" defer></script>
+        <script src="./js/region.js" defer></script>
+    </head>
+<body>
+
+    <header class="header">
+        <div class="container header__inner">
+
+            <a class="header__logo" href="./index.html">
+            <img src="./assets/logo/logo.svg" alt="Моя профессия — ИТ">
+            </a>
+
+            <nav class="header__nav">
+            <a class="header__link" href="./index.html">Главная</a>
+
+            <div class="header__dropdown">
+                <button class="header__dropdown-button" type="button">
+                Треки
+                <span class="header__arrow"></span>
+                </button>
+
+                <div class="header__dropdown-menu">
+                <a href="./schoolchildren.html">Трек школьников</a>
+                <a href="./student.html">Трек студентов</a>
+                </div>
+            </div>
+
+            <a class="header__link" href="./region_operator.html">Региональным операторам</a>
+            <a class="header__link" href="./news.html">Новости</a>
+            <a class="header__link" href="./contact.html">Контакты</a>
+            </nav>
+
+            <button class="header__burger" type="button" aria-label="Открыть меню">
+            <span></span>
+            <span></span>
+            </button>
+
+        </div>
+    </header>
+
+  <main>
+    <section class="hero">
+        <div class="container hero__inner">
+
+            <div class="hero__slide" id="heroSlide"></div>
+
+            <div class="hero__right">
+            <div class="hero__dots" id="heroDots"></div>
+
+            <div class="hero__arrows">
+                <button class="hero__arrow" type="button" id="heroPrev" aria-label="Предыдущий слайд">
+                <img src="./assets/icons/arrow-left.svg" alt="">
+                </button>
+
+                <button class="hero__arrow" type="button" id="heroNext" aria-label="Следующий слайд">
+                <img src="./assets/icons/arrow-right.svg" alt="">
+                </button>
+            </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <section class="about">
+        <div class="container about__inner">
+
+            <div class="about__top">
+            <div class="about__text">
+                <h2 class="about__title title title--lg">
+                Всероссийский конкурс<br>
+                Моя профессия — ИТ
+                </h2>
+
+                <p class="about__description text text--20">
+                Конкурс «Моя профессия — ИТ» развивает ИТ-отрасль в регионах,
+                помогает школьникам с ранних лет погрузиться в ИТ, выбрать профессию,
+                расти, как специалисты отрасли, и влиять на будущее страны.
+                </p>
+        </div>
+
+            <img 
+                class="about__decor" 
+                src="./img/about_decor.png" 
+                alt=""
+            >
+            </div>
+
+            <div class="about__cards">
+                <article class="about-card">
+                    <h3 class="about-card__title title title--sm">
+                    Новое<br>поколение
+                    </h3>
+
+                    <img 
+                    class="about-card__shape" 
+                    src="./img/m_medium.svg" 
+                    alt=""
+                    >
+
+                    <p class="about-card__text text text--18">
+                    Включает школьников, студентов<br>и молодых специалистов в новое
+                    поколение ИТ-сообщества страны.
+                    </p>
+                </article>
+
+                <article class="about-card">
+                    <h3 class="about-card__title title title--sm">
+                    Ранняя<br>профориентация
+                    </h3>
+
+                    <img 
+                    class="about-card__shape" 
+                    src="./img/p_medium.svg" 
+                    alt=""
+                    >
+
+                    <p class="about-card__text text text--18">
+                    Позволяет детям со школьной<br>скамьи определиться и выбрать
+                    <br>ИТ-профессию.
+                    </p>
+                </article>
+
+                <article class="about-card">
+                    <h3 class="about-card__title title title--sm">
+                    Федеральный<br>уровень
+                    </h3>
+
+                    <img 
+                    class="about-card__shape" 
+                    src="./img/i_medium.svg" 
+                    alt=""
+                    >
+
+                    <p class="about-card__text text text--18">
+                    Конкурс проводится<br>на федеральном уровне,<br>охватывая все регионы России.
+                    </p>
+                </article>
+
+                <article class="about-card about-card--wide">
+                    <h3 class="about-card__title title title--sm">
+                    Драйвер<br>развития
+                    </h3>
+
+                    <img 
+                    class="about-card__shape" 
+                    src="./img/t_long.svg" 
+                    alt=""
+                    >
+
+                    <p class="about-card__text text text--18">
+                    Способствует развитию ИТ-отрасли<br>в регионах страны.
+                    </p>
+                </article>
+
+                <article class="about-card about-card--wide">
+                    <h3 class="about-card__title title title--sm">
+                    Социальный<br>лифт
+                    </h3>
+
+                    <img 
+                    class="about-card__shape" 
+                    src="./img/m_long.svg" 
+                    alt=""
+                    >
+
+                    <p class="about-card__text text text--18">
+                    Мощный рост в карьере, навыков <br>для молодых специалистов.
+                    </p>
+                </article>
+                </div>
+
+                <div class="about__stats">
+                <div class="about-stat">
+                    <span class="about-stat__number">10</span>
+                    <span class="about-stat__label text text--18">лет</span>
+                </div>
+
+                <div class="about-stat">
+                    <span class="about-stat__number">15+</span>
+                    <span class="about-stat__label text text--18">Стартапов</span>
+                </div>
+
+                <div class="about-stat">
+                    <span class="about-stat__number">300+</span>
+                    <span class="about-stat__label text text--18">Хакатонов</span>
+                </div>
+
+                <div class="about-stat">
+                    <span class="about-stat__number">40 150</span>
+                    <span class="about-stat__label text text--18">Участников</span>
+                </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="tracks">
+        <div class="container">
+            <div class="tracks__inner">
+
+            <div class="tracks__slide" id="tracksSlide"></div>
+
+            <div class="tracks__arrows">
+                <button class="tracks__arrow" type="button" id="tracksPrev" aria-label="Предыдущий слайд">
+                <img src="./assets/icons/arrow-left.svg" alt="">
+                </button>
+
+                <button class="tracks__arrow" type="button" id="tracksNext" aria-label="Следующий слайд">
+                <img src="./assets/icons/arrow-right.svg" alt="">
+                </button>
+            </div>
+
+            <div class="tracks__dots" id="tracksDots"></div>
+
+            </div>
+        </div>
+        </section>
+
+        <section class="roadmap">
+            <div class="container">
+                <div class="roadmap__inner">
+
+                <article class="roadmap-item">
+                    <div class="roadmap-item__content">
+                    <h3 class="roadmap-item__title title title--md">
+                        Запуск III Всероссийского<br>
+                        конкурса МПИТ
+                    </h3>
+
+                    <p class="roadmap-item__text text text--20">
+                        Пройди регистрацию<br>
+                        и прими участие в конкурсе
+                    </p>
+                    </div>
+
+                    <img
+                    class="roadmap-item__mascot roadmap-item__mascot--1"
+                    src="./img/mascot1.svg"
+                    alt=""
+                    >
+
+                    <div class="roadmap-item__date">
+                    <img
+                        class="roadmap-item__date-shape"
+                        src="./img/m_medium_roadmap.svg"
+                        alt=""
+                    >
+                    <span class="roadmap-item__date-text">16 июля</span>
+                    </div>
+                </article>
+
+                <article class="roadmap-item">
+                    <div class="roadmap-item__content">
+                    <h3 class="roadmap-item__title title title--md">
+                        Онлайн-тестирование
+                    </h3>
+
+                    <div class="roadmap-item__buttons">
+                        <span class="roadmap-button roadmap-button--disabled">
+                        Скоро будет доступно
+                        </span>
+                    </div>
+                    </div>
+
+                    <div class="roadmap-item__date">
+                    <img
+                        class="roadmap-item__date-shape"
+                        src="./img/p_medium_roadmap.svg"
+                        alt=""
+                    >
+                    <span class="roadmap-item__date-text">Июль-Сентябрь</span>
+                    </div>
+                </article>
+
+                <article class="roadmap-item">
+                    <div class="roadmap-item__content">
+                    <h3 class="roadmap-item__title title title--md">
+                        МПИТ Конференция
+                    </h3>
+
+                    <p class="roadmap-item__text text text--20">
+                        Подключись к конференции, чтобы узнать<br>
+                        нововведения этого сезона
+                    </p>
+
+                    <div class="roadmap-item__buttons">
+                        <a class="roadmap-button roadmap-button--blue" href="#">ВК</a>
+                        <a class="roadmap-button roadmap-button--purple" href="#">Twitch</a>
+                    </div>
+                    </div>
+
+                    <img
+                    class="roadmap-item__mascot roadmap-item__mascot--2"
+                    src="./img/mascot2.svg"
+                    alt=""
+                    >
+
+                    <div class="roadmap-item__date">
+                    <img
+                        class="roadmap-item__date-shape"
+                        src="./img/i_medium_roadmap.svg"
+                        alt=""
+                    >
+                    <span class="roadmap-item__date-text">30 сентября</span>
+                    </div>
+                </article>
+
+                <article class="roadmap-item">
+                    <div class="roadmap-item__content">
+                    <h3 class="roadmap-item__title title title--md">
+                        Региональные финалы
+                    </h3>
+                    </div>
+
+                    <div class="roadmap-item__date">
+                    <img
+                        class="roadmap-item__date-shape"
+                        src="./img/t_medium_roadmap.svg"
+                        alt=""
+                    >
+                    <span class="roadmap-item__date-text">Сентябрь-Ноябрь</span>
+                    </div>
+                </article>
+
+                <article class="roadmap-item">
+                    <div class="roadmap-item__content">
+                    <h3 class="roadmap-item__title title title--md">
+                        Гранд финал III<br>
+                        Всероссийского<br>
+                        конкурса МПИТ
+                    </h3>
+                    </div>
+
+                    <img
+                    class="roadmap-item__mascot roadmap-item__mascot--3"
+                    src="./img/mascot3.svg"
+                    alt=""
+                    >
+
+                    <div class="roadmap-item__date">
+                    <img
+                        class="roadmap-item__date-shape"
+                        src="./img/p_medium_roadmap.svg"
+                        alt=""
+                    >
+                    <span class="roadmap-item__date-text">Апрель</span>
+                    </div>
+                </article>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="regions">
+            <div class="container regions__inner">
+                <h2 class="regions__title title title--lg">
+                Регионы
+                </h2>
+
+                <div class="regions__grid" id="regionsGrid"></div>
+            </div>
+        </section>
+
+        <section class="reviews">
+            <div class="container reviews__inner">
+
+                <div class="reviews__left">
+                <h2 class="reviews__title title title--lg">
+                    О нас<br>говорят
+                </h2>
+
+                <div class="reviews__arrows">
+                    <button class="reviews__arrow" type="button" id="reviewsPrev" aria-label="Предыдущий отзыв">
+                    <img src="./assets/icons/arrow-left.svg" alt="">
+                    </button>
+
+                    <button class="reviews__arrow" type="button" id="reviewsNext" aria-label="Следующий отзыв">
+                    <img src="./assets/icons/arrow-right.svg" alt="">
+                    </button>
+                </div>
+                </div>
+
+                <div class="reviews__card" id="reviewsCard"></div>
+
+            </div>
+        </section>
+
+        <section class="partners">
+            <div class="container partners__inner">
+
+                <h2 class="partners__title title title--lg">
+                Наши партнеры и друзья
+                </h2>
+
+                <div class="partners__grid">
+                <a class="partners-card" href="#" target="_blank">
+                    <img src="./assets/logo/logo-grey.svg" alt="Партнер">
+                </a>
+
+                <a class="partners-card" href="#" target="_blank">
+                    <img src="./assets/logo/logo-grey.svg" alt="Партнер">
+                </a>
+
+                <a class="partners-card" href="#" target="_blank">
+                    <img src="./assets/logo/logo-grey.svg" alt="Партнер">
+                </a>
+
+                <a class="partners-card" href="#" target="_blank">
+                    <img src="./assets/logo/logo-grey.svg" alt="Партнер">
+                </a>
+
+                <a class="partners-card" href="#" target="_blank">
+                    <img src="./assets/logo/logo-grey.svg" alt="Партнер">
+                </a>
+
+                <a class="partners-card" href="#" target="_blank">
+                    <img src="./assets/logo/logo-grey.svg" alt="Партнер">
+                </a>
+
+                <a class="partners-card" href="#" target="_blank">
+                    <img src="./assets/logo/logo-grey.svg" alt="Партнер">
+                </a>
+
+                <a class="partners-card" href="#" target="_blank">
+                    <img src="./assets/logo/logo-grey.svg" alt="Партнер">
+                </a>
+
+                <a class="partners-card" href="#" target="_blank">
+                    <img src="./assets/logo/logo-grey.svg" alt="Партнер">
+                </a>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="news">
+            <div class="container news__inner">
+
+                <div class="news__top">
+                <h2 class="news__title title title--lg">
+                    Новости
+                </h2>
+
+                <div class="news__arrows">
+                    <button class="news__arrow" type="button" id="newsPrev" aria-label="Предыдущие новости">
+                    <img src="./assets/icons/arrow-left.svg" alt="">
+                    </button>
+
+                    <button class="news__arrow" type="button" id="newsNext" aria-label="Следующие новости">
+                    <img src="./assets/icons/arrow-right.svg" alt="">
+                    </button>
+                </div>
+                </div>
+
+                <div class="news__slider" id="newsSlider"></div>
+
+            </div>
+        </section>
+
+        <footer class="footer">
+            <div class="container footer__inner">
+
+                <div class="footer__top">
+                <a class="footer__logo" href="./index.html">
+                    <img src="./assets/logo/logo.svg" alt="Моя профессия — ИТ">
+                    <span class="footer__year text text--16">2026</span>
+                </a>
+
+                <div class="footer__column">
+                    <h3 class="footer__title text text--20">Контакты</h3>
+
+                    <div class="footer__links">
+                    <a href="tel:+7914220807">8 914 22-08-07</a>
+                    <a href="mailto:hello@mpit.pro">hello@mpit.pro</a>
+                    <a href="#">Чат поддержки участников (Телеграм)</a>
+                    </div>
+                </div>
+
+                <div class="footer__column">
+                    <h3 class="footer__title text text--20">Страницы</h3>
+
+                    <div class="footer__links">
+                    <a href="./index.html">Главная</a>
+                    <a href="./schoolchildren.html">Школьникам</a>
+                    <a href="./student.html">Специалистам</a>
+                    <a href="./region_operator.html">Региональным операторам</a>
+                    <a href="./contact.html">Контакты</a>
+                    <a href="./news.html">Новости</a>
+                    </div>
+                </div>
+
+                <div class="footer__column">
+                    <h3 class="footer__title text text--20">Документы</h3>
+
+                    <div class="footer__links">
+                    <a href="./assets/document/regulations.pdf">Положение о конкурсе</a>
+                    <a href="./assets/document/agreement.pdf">Пользовательское соглашение</a>
+                    <a href="./assets/document/privacy.pdf">Политика конфиденциальности</a>
+                    </div>
+                </div>
+                </div>
+
+
+                <div class="footer__big-logo">
+                <img src="./img/logo_footer.svg" alt="">
+                </div>
+
+            </div>
+        </footer>
+
+</main>
+</body>
+</html>

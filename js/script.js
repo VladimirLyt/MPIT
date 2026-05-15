@@ -39,22 +39,23 @@ const heroSlides = [
     title: "Начинается регистрация<br>на хакатон<br>в Брянске",
     subtitle: "с 3 октября по 7 октября 2025",
     buttonText: "Посмотреть",
-    buttonLink: "#",
+    buttonLink: "./region/bryansk.html",
 
     background: "#0d1828",
 
     shape: "./img/i_alone.svg",
     image: "./img/region/bryansk/hero_block.png",
+    
 
     imageY: "0px",
     imageHeight: "610px",
     imageWidth: "auto",
   },
   {
-    title: "Стартует трек для школьников",
-    subtitle: "участвуй в команде и развивай ИТ-навыки",
+    title: "Итоги отборочного этапа Архангельской области",
+    subtitle: "участвуй в команде <br>и развивай ИТ-навыки",
     buttonText: "Подробнее",
-    buttonLink: "./schoolchildren.html",
+    buttonLink: "https://vk.com/@mpitpro-obyavleny-itogi-regionalnogo-etapa-moya-professiya-it-v-arha",
 
     background: "#1E5BFF",
 
@@ -66,15 +67,15 @@ const heroSlides = [
     imageWidth: "auto",
   },
   {
-    title: "Открыт набор для студентов",
+    title: "Завершение отборочного этапа в Калининграде",
     subtitle: "создавай проекты и работай с реальными задачами",
     buttonText: "Перейти",
-    buttonLink: "./student.html",
+    buttonLink: "https://vk.com/@mpitpro-v-kaliningrade-zavershilsya-okruzhnoi-final-vserossiiskogo-k",
 
     background: "#6C4DFF",
 
-    shape: "./img/p_alone.svg",
-    image: "./img/region/kazan/hero_block.png",
+    shape: "./img/t_alone_blue.svg",
+    image: "./img/region/kaliningrad/hero_block.png",
 
     imageY: "0px",
     imageHeight: "600px",

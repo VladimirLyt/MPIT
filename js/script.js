@@ -68,7 +68,7 @@ const heroSlides = [
   },
   {
     title: "Завершение отборочного этапа в Калининграде",
-    subtitle: "создавай проекты и работай с реальными задачами",
+    subtitle: "создавай проекты и работай <br>с реальными задачами",
     buttonText: "Перейти",
     buttonLink: "https://vk.com/@mpitpro-v-kaliningrade-zavershilsya-okruzhnoi-final-vserossiiskogo-k",
 
@@ -437,3 +437,240 @@ if (reviewsPrev && reviewsNext) {
 }
 
 renderReview(currentReview);
+
+/* ABOUT SLIDER */
+
+(() => {
+  const aboutSlider = document.querySelector(".about-slider");
+  const aboutTrack = document.querySelector("#aboutSliderTrack");
+  const aboutDots = document.querySelector("#aboutSliderDots");
+
+  if (!aboutSlider || !aboutTrack || !aboutDots) return;
+
+  const aboutSlides = [
+    {
+      title: "Новое<br>поколение",
+      text: "Включает школьников, студентов <br>и молодых специалистов в новое <br>поколение ИТ-сообщества страны.",
+      shape: "./img/m_long_card.svg",
+      number: "10",
+      label: "лет проводим хакатоны"
+    },
+    {
+      title: "Ранняя<br>профориентация",
+      text: "Позволяет детям со школьной скамьи определиться и выбрать ИТ-профессию.",
+      shape: "./img/p_long_card.svg",
+      number: "40 150",
+      label: "участников"
+    },
+    {
+      title: "Социальный <br>лифт",
+      text: "Мощный рост в карьере, навыков <br>для молодых специалистов.",
+      shape: "./img/i_long_card.svg",
+      number: "15+",
+      label: "стартапов"
+    },
+    {
+      title: "Драйвер<br>развития",
+      text: "Способствует развитию ИТ-отрасли <br>в регионах страны и помогает участникам работать с реальными задачами.",
+      shape: "./img/t_long_card.svg",
+      number: "300+",
+      label: "хакатонов проведено"
+    },
+  ];
+
+  const slideTime = 8000;
+  const slidesCount = aboutSlides.length;
+
+  let currentVirtualSlide = slidesCount;
+  let animationFrameId = null;
+  let timerStart = 0;
+  let isTransitioning = false;
+
+  function getRealIndex(virtualIndex) {
+    return ((virtualIndex % slidesCount) + slidesCount) % slidesCount;
+  }
+
+  function renderAboutSlides() {
+    aboutTrack.innerHTML = "";
+
+    const loopSlides = [
+      ...aboutSlides,
+      ...aboutSlides,
+      ...aboutSlides
+    ];
+
+    loopSlides.forEach((slide, index) => {
+      const card = document.createElement("button");
+
+      card.className = "about-slider-card";
+      card.type = "button";
+      card.setAttribute("aria-label", slide.title.replaceAll("<br>", " "));
+      card.dataset.index = index;
+
+      card.innerHTML = `
+        <h3 class="about-slider-card__title">${slide.title}</h3>
+
+        <p class="about-slider-card__text">
+          ${slide.text}
+        </p>
+
+        <div class="about-slider-card__visual">
+          <img 
+            class="about-slider-card__letter" 
+            src="${slide.shape}" 
+            alt=""
+          >
+
+          <span class="about-slider-card__number">${slide.number}</span>
+          <span class="about-slider-card__label">${slide.label}</span>
+        </div>
+      `;
+
+      card.addEventListener("click", () => {
+        setAboutSlide(index);
+      });
+
+      aboutTrack.appendChild(card);
+    });
+  }
+
+  function renderAboutDots() {
+    aboutDots.innerHTML = "";
+
+    aboutSlides.forEach((_, index) => {
+      const dot = document.createElement("button");
+
+      dot.className = "about-slider__dot";
+      dot.type = "button";
+      dot.setAttribute("aria-label", `Карточка ${index + 1}`);
+
+      dot.innerHTML = `<span class="about-slider__dot-progress"></span>`;
+
+      dot.addEventListener("click", () => {
+        setAboutSlide(slidesCount + index);
+      });
+
+      aboutDots.appendChild(dot);
+    });
+  }
+
+  function moveAboutTrack(withTransition = true) {
+    const viewport = aboutSlider.querySelector(".about-slider__viewport");
+    const cards = aboutTrack.querySelectorAll(".about-slider-card");
+
+    if (!viewport || !cards.length) return;
+
+    const activeCard = cards[currentVirtualSlide];
+    const viewportWidth = viewport.clientWidth;
+    const cardWidth = activeCard.getBoundingClientRect().width;
+
+    const trackStyles = window.getComputedStyle(aboutTrack);
+    const gap = parseFloat(trackStyles.columnGap || trackStyles.gap) || 28;
+
+    const offset =
+      viewportWidth / 2 -
+      cardWidth / 2 -
+      currentVirtualSlide * (cardWidth + gap);
+
+    aboutTrack.style.transition = withTransition
+      ? "transform 0.65s ease"
+      : "none";
+
+    aboutTrack.style.transform = `translate3d(${offset}px, 0, 0)`;
+
+    if (!withTransition) {
+      aboutTrack.offsetHeight;
+      aboutTrack.style.transition = "transform 0.65s ease";
+    }
+  }
+
+  function updateActiveClasses() {
+    const cards = aboutTrack.querySelectorAll(".about-slider-card");
+    const dots = aboutDots.querySelectorAll(".about-slider__dot");
+    const realIndex = getRealIndex(currentVirtualSlide);
+
+    cards.forEach((card, index) => {
+      card.classList.toggle(
+        "about-slider-card--active",
+        index === currentVirtualSlide
+      );
+    });
+
+    dots.forEach((dot, index) => {
+      const progress = dot.querySelector(".about-slider__dot-progress");
+
+      dot.classList.toggle("about-slider__dot--active", index === realIndex);
+
+      if (progress) {
+        progress.style.width = "0%";
+      }
+    });
+  }
+
+  function setAboutSlide(index, withTransition = true) {
+    if (isTransitioning && withTransition) return;
+
+    currentVirtualSlide = index;
+    isTransitioning = withTransition;
+
+    updateActiveClasses();
+    moveAboutTrack(withTransition);
+    startAboutTimer();
+  }
+
+  function normalizeLoopPosition() {
+    if (currentVirtualSlide >= slidesCount * 2) {
+      currentVirtualSlide = currentVirtualSlide - slidesCount;
+      updateActiveClasses();
+      moveAboutTrack(false);
+    }
+
+    if (currentVirtualSlide < slidesCount) {
+      currentVirtualSlide = currentVirtualSlide + slidesCount;
+      updateActiveClasses();
+      moveAboutTrack(false);
+    }
+
+    isTransitioning = false;
+  }
+
+  function startAboutTimer() {
+    cancelAnimationFrame(animationFrameId);
+
+    timerStart = performance.now();
+
+    function updateTimer(currentTime) {
+      const progressValue = Math.min((currentTime - timerStart) / slideTime, 1);
+
+      const activeProgress = aboutDots.querySelector(
+        ".about-slider__dot--active .about-slider__dot-progress"
+      );
+
+      if (activeProgress) {
+        activeProgress.style.width = `${progressValue * 100}%`;
+      }
+
+      if (progressValue >= 1) {
+        setAboutSlide(currentVirtualSlide + 1);
+        return;
+      }
+
+      animationFrameId = requestAnimationFrame(updateTimer);
+    }
+
+    animationFrameId = requestAnimationFrame(updateTimer);
+  }
+
+  aboutTrack.addEventListener("transitionend", () => {
+    normalizeLoopPosition();
+  });
+
+  renderAboutSlides();
+  renderAboutDots();
+
+  setAboutSlide(currentVirtualSlide, false);
+
+  window.addEventListener("resize", () => {
+    moveAboutTrack(false);
+  });
+})();

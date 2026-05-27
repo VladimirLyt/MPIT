@@ -80,138 +80,44 @@
     </section>
 
 
-    <section class="about">
-        <div class="container about__inner">
+    <section class="about about-slider" id="about">
+    <div class="container about-slider__container">
 
-            <div class="about__top">
-            <div class="about__text">
-                <h2 class="about__title title title--lg">
-                Всероссийский конкурс<br>
-                Моя профессия — ИТ
-                </h2>
-
-                <p class="about__description text text--20">
-                Конкурс «Моя профессия — ИТ» развивает ИТ-отрасль в регионах,
-                помогает школьникам с ранних лет погрузиться в ИТ, выбрать профессию,
-                расти, как специалисты отрасли, и влиять на будущее страны.
-                </p>
-        </div>
-
+        <div class="about-slider__header">
             <img 
-                class="about__decor" 
-                src="./img/about_decor.png" 
+                class="about-slider__mascot about-slider__mascot--left" 
+                src="./img/mascot1.svg" 
                 alt=""
             >
+
+            <div class="about-slider__header-text">
+                <h2 class="about-slider__title title">
+                    Всероссийский конкурс<br>
+                    Моя профессия — ИТ
+                </h2>
+
+                <p class="about-slider__description text">
+                    Конкурс «Моя профессия — ИТ» развивает ИТ-отрасль в регионах,
+                    помогает школьникам с ранних лет погружаться в ИТ, выбирать профессию,
+                    расти, как специалисты отрасли, и влиять на будущее страны.
+                </p>
             </div>
 
-            <div class="about__cards">
-                <article class="about-card">
-                    <h3 class="about-card__title title title--sm">
-                    Новое<br>поколение
-                    </h3>
+            <img 
+                class="about-slider__mascot about-slider__mascot--right" 
+                src="./img/mascot2.svg" 
+                alt=""
+            >
+        </div>
 
-                    <img 
-                    class="about-card__shape" 
-                    src="./img/m_medium.svg" 
-                    alt=""
-                    >
+        <div class="about-slider__viewport">
+            <div class="about-slider__track" id="aboutSliderTrack"></div>
+        </div>
 
-                    <p class="about-card__text text text--18">
-                    Включает школьников, студентов<br>и молодых специалистов в новое
-                    поколение ИТ-сообщества страны.
-                    </p>
-                </article>
+        <div class="about-slider__dots" id="aboutSliderDots"></div>
 
-                <article class="about-card">
-                    <h3 class="about-card__title title title--sm">
-                    Ранняя<br>профориентация
-                    </h3>
-
-                    <img 
-                    class="about-card__shape" 
-                    src="./img/p_medium.svg" 
-                    alt=""
-                    >
-
-                    <p class="about-card__text text text--18">
-                    Позволяет детям со школьной<br>скамьи определиться и выбрать
-                    <br>ИТ-профессию.
-                    </p>
-                </article>
-
-                <article class="about-card">
-                    <h3 class="about-card__title title title--sm">
-                    Федеральный<br>уровень
-                    </h3>
-
-                    <img 
-                    class="about-card__shape" 
-                    src="./img/i_medium.svg" 
-                    alt=""
-                    >
-
-                    <p class="about-card__text text text--18">
-                    Конкурс проводится<br>на федеральном уровне,<br>охватывая все регионы России.
-                    </p>
-                </article>
-
-                <article class="about-card about-card--wide">
-                    <h3 class="about-card__title title title--sm">
-                    Драйвер<br>развития
-                    </h3>
-
-                    <img 
-                    class="about-card__shape" 
-                    src="./img/t_long.svg" 
-                    alt=""
-                    >
-
-                    <p class="about-card__text text text--18">
-                    Способствует развитию ИТ-отрасли<br>в регионах страны.
-                    </p>
-                </article>
-
-                <article class="about-card about-card--wide">
-                    <h3 class="about-card__title title title--sm">
-                    Социальный<br>лифт
-                    </h3>
-
-                    <img 
-                    class="about-card__shape" 
-                    src="./img/m_long.svg" 
-                    alt=""
-                    >
-
-                    <p class="about-card__text text text--18">
-                    Мощный рост в карьере, навыков <br>для молодых специалистов.
-                    </p>
-                </article>
-                </div>
-
-                <div class="about__stats">
-                <div class="about-stat">
-                    <span class="about-stat__number">10</span>
-                    <span class="about-stat__label text text--18">лет</span>
-                </div>
-
-                <div class="about-stat">
-                    <span class="about-stat__number">15+</span>
-                    <span class="about-stat__label text text--18">Стартапов</span>
-                </div>
-
-                <div class="about-stat">
-                    <span class="about-stat__number">300+</span>
-                    <span class="about-stat__label text text--18">Хакатонов</span>
-                </div>
-
-                <div class="about-stat">
-                    <span class="about-stat__number">40 150</span>
-                    <span class="about-stat__label text text--18">Участников</span>
-                </div>
-                </div>
-
-            </div>
-        </section>
+    </div>
+</section>
 
         <section class="tracks">
         <div class="container">

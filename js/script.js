@@ -546,7 +546,10 @@ renderReview(currentReview);
 
       dot.innerHTML = `<span class="about-slider__dot-progress"></span>`;
 
-      dot.addEventListener("click", () => {
+      dot.addEventListener("pointerdown", (event) => {
+        event.preventDefault();
+
+        isTransitioning = false;
         setAboutSlide(slidesCount + index);
       });
 
@@ -665,6 +668,59 @@ renderReview(currentReview);
     normalizeLoopPosition();
   });
 
+
+  /* Mobile swipe */
+
+const aboutViewport = aboutSlider.querySelector(".about-slider__viewport");
+
+let touchStartX = 0;
+let touchStartY = 0;
+let touchEndX = 0;
+let touchEndY = 0;
+
+function isMobileAboutSlider() {
+  return window.matchMedia("(max-width: 768px)").matches;
+}
+
+function handleAboutSwipe() {
+  if (!isMobileAboutSlider()) return;
+
+  const diffX = touchEndX - touchStartX;
+  const diffY = touchEndY - touchStartY;
+
+  const minSwipeDistance = 50;
+
+  if (Math.abs(diffX) < minSwipeDistance) return;
+  if (Math.abs(diffX) < Math.abs(diffY)) return;
+
+  if (diffX < 0) {
+    setAboutSlide(currentVirtualSlide + 1);
+  } else {
+    setAboutSlide(currentVirtualSlide - 1);
+  }
+}
+
+if (aboutViewport) {
+  aboutViewport.addEventListener(
+    "touchstart",
+    (event) => {
+      touchStartX = event.touches[0].clientX;
+      touchStartY = event.touches[0].clientY;
+    },
+    { passive: true }
+  );
+
+  aboutViewport.addEventListener(
+    "touchend",
+    (event) => {
+      touchEndX = event.changedTouches[0].clientX;
+      touchEndY = event.changedTouches[0].clientY;
+
+      handleAboutSwipe();
+    },
+    { passive: true }
+  );
+}
   renderAboutSlides();
   renderAboutDots();
 

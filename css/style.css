@@ -804,7 +804,7 @@ button {
     border-radius: 18px;
 
     --card-padding-x: 16px;
-    --card-padding-y: 20px;
+    --card-padding-y:20px;
   }
 
   .about-slider-card__title {
@@ -813,6 +813,12 @@ button {
 
   .about-slider-card__text {
     font-size: 16px;
+  }
+
+  .about-slider-card__visual {
+    left: 14px;
+    right: 14px;
+    bottom: 18px;
   }
 
   .about-slider-card__number {
@@ -1800,4 +1806,23 @@ button {
 
   display: block;
   opacity: 0.45;
+}
+
+.about-slider__viewport {
+  touch-action: pan-y;
+}
+
+.about-slider-card {
+  user-select: none;
+}
+
+.about-slider__dots {
+  position: relative;
+  z-index: 10;
+}
+
+.about-slider__dot {
+  position: relative;
+  z-index: 11;
+  pointer-events: auto;
 }

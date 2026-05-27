@@ -502,7 +502,6 @@ button {
   margin: 0;
 
   font-size: 46px;
-  line-height: 1.03;
   letter-spacing: -0.03em;
   color: #17202d;
 }
@@ -526,16 +525,56 @@ button {
 
 .about-slider__mascot--left {
   width: 200px;
-  left: 96px;
-  top: 48px;
-  transform: rotate(-15deg);
+  right: 72px;
+  top: 52px;
+  animation-name: mascotSwingLeft;
 }
 
 .about-slider__mascot--right {
   width: 200px;
-  right: 72px;
-  top: 52px;
-  transform: rotate(12deg);
+  left: 96px;
+  top: 48px;
+  animation-name: mascotSwingRight;
+  animation-delay: 0.5s;
+}
+
+.about-slider__mascot {
+  position: absolute;
+  z-index: 1;
+  object-fit: contain;
+  pointer-events: none;
+  transform-origin: center bottom;
+  animation-duration: 3.2s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+@keyframes mascotSwingLeft {
+  0% {
+    transform: rotate(-8deg) translateY(0);
+  }
+
+  50% {
+    transform: rotate(6deg) translateY(-8px);
+  }
+
+  100% {
+    transform: rotate(-8deg) translateY(0);
+  }
+}
+
+@keyframes mascotSwingRight {
+  0% {
+    transform: rotate(8deg) translateY(0);
+  }
+
+  50% {
+    transform: rotate(-6deg) translateY(-8px);
+  }
+
+  100% {
+    transform: rotate(8deg) translateY(0);
+  }
 }
 
 /* Slider */
@@ -1825,4 +1864,191 @@ button {
   position: relative;
   z-index: 11;
   pointer-events: auto;
+}
+
+/* Анимация маскотов в roadmap */
+
+.roadmap-item__mascot {
+  transform-origin: center bottom;
+  animation: roadmapMascotSwing 3.4s ease-in-out infinite;
+  will-change: transform;
+}
+
+.roadmap-item__mascot--1 {
+  --roadmap-mascot-start-rotate: 8deg;
+  --roadmap-mascot-end-rotate: -5deg;
+  animation-delay: 0s;
+}
+
+.roadmap-item__mascot--2 {
+  --roadmap-mascot-start-rotate: -8deg;
+  --roadmap-mascot-end-rotate: 5deg;
+  animation-delay: 0.45s;
+}
+
+.roadmap-item__mascot--3 {
+  --roadmap-mascot-start-rotate: 10deg;
+  --roadmap-mascot-end-rotate: -4deg;
+  animation-delay: 0.25s;
+}
+
+@keyframes roadmapMascotSwing {
+  0% {
+    transform: translate(-50%, -50%) rotate(var(--roadmap-mascot-start-rotate));
+  }
+
+  50% {
+    transform: translate(-50%, calc(-50% - 10px)) rotate(var(--roadmap-mascot-end-rotate));
+  }
+
+  100% {
+    transform: translate(-50%, -50%) rotate(var(--roadmap-mascot-start-rotate));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .roadmap-item__mascot {
+    animation: none;
+  }
+}
+
+/* Анимация маскотов на страницах треков */
+
+.team-standards__mascot,
+.track-info-card__mascot,
+.participation__mascot {
+  transform-origin: center bottom;
+  will-change: transform;
+}
+
+/* Страница "Школьники" — два маскота в блоке стандартов */
+
+.team-standards__mascot--purple {
+  animation: schoolMascotPurpleSwing 3.2s ease-in-out infinite;
+}
+
+.team-standards__mascot--blue {
+  animation: schoolMascotBlueSwing 3.4s ease-in-out infinite;
+  animation-delay: 0.4s;
+}
+
+@keyframes schoolMascotPurpleSwing {
+  0% {
+    transform: rotate(4deg) translateY(0);
+  }
+
+  50% {
+    transform: rotate(-5deg) translateY(-8px);
+  }
+
+  100% {
+    transform: rotate(4deg) translateY(0);
+  }
+}
+
+@keyframes schoolMascotBlueSwing {
+  0% {
+    transform: rotate(-8deg) translateY(0);
+  }
+
+  50% {
+    transform: rotate(5deg) translateY(-10px);
+  }
+
+  100% {
+    transform: rotate(-8deg) translateY(0);
+  }
+}
+
+/* Страница "Студенты" — маскот в карточке стандартов */
+
+.track-info-card__mascot {
+  animation: trackInfoMascotSwing 3.3s ease-in-out infinite;
+}
+
+@keyframes trackInfoMascotSwing {
+  0% {
+    transform: rotate(0deg) translateY(0);
+  }
+
+  50% {
+    transform: rotate(7deg) translateY(-8px);
+  }
+
+  100% {
+    transform: rotate(0deg) translateY(0);
+  }
+}
+
+/* Маскоты в блоке "Что следует сделать..." */
+
+.participation__mascot {
+  animation: participationMascotSwing 3.5s ease-in-out infinite;
+}
+
+@keyframes participationMascotSwing {
+  0% {
+    transform: rotate(-4deg) translateY(0);
+  }
+
+  50% {
+    transform: rotate(5deg) translateY(-10px);
+  }
+
+  100% {
+    transform: rotate(-4deg) translateY(0);
+  }
+}
+
+/* Отключение анимации, если у пользователя включено уменьшение движения */
+
+@media (prefers-reduced-motion: reduce) {
+  .team-standards__mascot,
+  .track-info-card__mascot,
+  .participation__mascot {
+    animation: none;
+  }
+}
+
+
+body {
+  padding-top: 88px;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+
+  width: 100%;
+  background: #ffffff;
+
+  transform: translateY(0);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  will-change: transform;
+}
+
+.header.header--hidden {
+  transform: translateY(-100%);
+}
+
+.header.header--scrolled {
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.08);
+}
+
+@media (max-width: 992px) {
+  body {
+    padding-top: 76px;
+  }
+
+  .header {
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+  }
+
+  .header__nav {
+    top: 76px;
+  }
 }

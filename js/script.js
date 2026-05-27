@@ -730,3 +730,61 @@ if (aboutViewport) {
     moveAboutTrack(false);
   });
 })();
+
+/* HEADER SHOW ON SCROLL UP */
+
+(() => {
+  const header = document.querySelector(".header");
+
+  if (!header) return;
+
+  let lastScrollTop = window.scrollY;
+  let ticking = false;
+
+  const hideAfter = 120;
+  const minScrollDelta = 6;
+
+  function updateHeader() {
+    const currentScrollTop = window.scrollY;
+    const scrollDifference = currentScrollTop - lastScrollTop;
+    const isMenuOpen = header.classList.contains("header--open");
+
+    if (currentScrollTop > 10) {
+      header.classList.add("header--scrolled");
+    } else {
+      header.classList.remove("header--scrolled");
+    }
+
+    if (isMenuOpen) {
+      header.classList.remove("header--hidden");
+      lastScrollTop = currentScrollTop;
+      ticking = false;
+      return;
+    }
+
+    if (Math.abs(scrollDifference) < minScrollDelta) {
+      ticking = false;
+      return;
+    }
+
+    if (scrollDifference > 0 && currentScrollTop > hideAfter) {
+      header.classList.add("header--hidden");
+    } else {
+      header.classList.remove("header--hidden");
+    }
+
+    lastScrollTop = currentScrollTop;
+    ticking = false;
+  }
+
+  window.addEventListener(
+    "scroll",
+    () => {
+      if (!ticking) {
+        requestAnimationFrame(updateHeader);
+        ticking = true;
+      }
+    },
+    { passive: true }
+  );
+})();
